@@ -86,6 +86,7 @@ describe HashMap do
       hash.each do |k, v|
         result << [k, v]
       end
+      p result
       expect(result.sort).to eq(goal)
     end
 
@@ -119,6 +120,7 @@ describe HashMap do
       contents = [:first, :second, :third].map do |k|
         [k, hash[k]]
       end
+      #contents = [[:first,1],[:second,2]]
 
       # triggers resize
       7.times { |i| hash[i] = i + 1 }
